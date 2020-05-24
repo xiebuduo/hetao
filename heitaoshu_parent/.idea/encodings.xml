@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/heitaoshu_common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_interface/src/main/java/com/heitaoshu/service/goods/AuditService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_interface/src/main/java/com/heitaoshu/service/goods/SpuLogService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_interface/src/main/java/com/heitaoshu/service/order/CategoryReportService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_pojo/src/main/java/com/heitaoshu/pojo/goods/Audit.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_pojo/src/main/java/com/heitaoshu/pojo/goods/CategoryBrand.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_pojo/src/main/java/com/heitaoshu/pojo/goods/Goods.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_pojo/src/main/java/com/heitaoshu/pojo/goods/SpuLog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_pojo/src/main/java/com/heitaoshu/pojo/order/CategoryReport.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_pojo/src/main/java/com/heitaoshu/pojo/order/OrderAndItem.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_pojo/src/main/java/com/heitaoshu/pojo/order/OrderItem.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_service_goods/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_service_goods/src/main/java/com/heitaoshu/dao/AuditMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_service_goods/src/main/java/com/heitaoshu/dao/CategoryBrandMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_service_goods/src/main/java/com/heitaoshu/dao/CategoryMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_service_goods/src/main/java/com/heitaoshu/dao/SpuLogMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_service_goods/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_service_order/src/main/java/com/heitaoshu/dao/CategoryReportMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_service_order/src/main/java/com/heitaoshu/service/impl/CategoryReportServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_web_manager/src/main/java/com/heitaoshu/controller/order/CategoryReportController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/heitaoshu_web_manager/src/main/java/com/heitaoshu/controller/task/OrderTask.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

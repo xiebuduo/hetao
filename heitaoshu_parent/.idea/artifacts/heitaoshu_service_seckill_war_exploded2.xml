@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="heitaoshu_service_seckill:war exploded2">
+    <output-path>$PROJECT_DIR$/out/artifacts/heitaoshu_service_seckill_war_exploded2</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="heitaoshu_service_seckill/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="heitaoshu_service_seckill" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

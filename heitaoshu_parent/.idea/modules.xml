@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_common/heitaoshu_common.iml" filepath="$PROJECT_DIR$/heitaoshu_common/heitaoshu_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_common_cas/heitaoshu_common_cas.iml" filepath="$PROJECT_DIR$/heitaoshu_common_cas/heitaoshu_common_cas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_common_service/heitaoshu_common_service.iml" filepath="$PROJECT_DIR$/heitaoshu_common_service/heitaoshu_common_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_common_web/heitaoshu_common_web.iml" filepath="$PROJECT_DIR$/heitaoshu_common_web/heitaoshu_common_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_interface/heitaoshu_interface.iml" filepath="$PROJECT_DIR$/heitaoshu_interface/heitaoshu_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_parent.iml" filepath="$PROJECT_DIR$/heitaoshu_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_pojo/heitaoshu_pojo.iml" filepath="$PROJECT_DIR$/heitaoshu_pojo/heitaoshu_pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_service_business/heitaoshu_service_business.iml" filepath="$PROJECT_DIR$/heitaoshu_service_business/heitaoshu_service_business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_service_config/heitaoshu_service_config.iml" filepath="$PROJECT_DIR$/heitaoshu_service_config/heitaoshu_service_config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_service_goods/heitaoshu_service_goods.iml" filepath="$PROJECT_DIR$/heitaoshu_service_goods/heitaoshu_service_goods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_service_order/heitaoshu_service_order.iml" filepath="$PROJECT_DIR$/heitaoshu_service_order/heitaoshu_service_order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_service_seckill/heitaoshu_service_seckill.iml" filepath="$PROJECT_DIR$/heitaoshu_service_seckill/heitaoshu_service_seckill.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_service_sms/heitaoshu_service_sms.iml" filepath="$PROJECT_DIR$/heitaoshu_service_sms/heitaoshu_service_sms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_service_system/heitaoshu_service_system.iml" filepath="$PROJECT_DIR$/heitaoshu_service_system/heitaoshu_service_system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_service_user/heitaoshu_service_user.iml" filepath="$PROJECT_DIR$/heitaoshu_service_user/heitaoshu_service_user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_web_center/heitaoshu_web_center.iml" filepath="$PROJECT_DIR$/heitaoshu_web_center/heitaoshu_web_center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_web_manager/heitaoshu_web_manager.iml" filepath="$PROJECT_DIR$/heitaoshu_web_manager/heitaoshu_web_manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_web_portal/heitaoshu_web_portal.iml" filepath="$PROJECT_DIR$/heitaoshu_web_portal/heitaoshu_web_portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heitaoshu_web_seckill/heitaoshu_web_seckill.iml" filepath="$PROJECT_DIR$/heitaoshu_web_seckill/heitaoshu_web_seckill.iml" />
+    </modules>
+  </component>
+</project>

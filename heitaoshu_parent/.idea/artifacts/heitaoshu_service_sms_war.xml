@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="heitaoshu_service_sms:war">
+    <output-path>$PROJECT_DIR$/heitaoshu_service_sms/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>heitaoshu_service_sms</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="heitaoshu_service_sms-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="heitaoshu_service_sms:war exploded" />
+    </root>
+  </artifact>
+</component>

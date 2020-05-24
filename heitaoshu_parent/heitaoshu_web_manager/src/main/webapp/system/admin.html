@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../css/elementui.css">
+    <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- 上传图片框样式，不使用上传组件可以删除此样式 -->
+    <style>
+        .avatar-uploader .el-upload {
+            border: 1px dashed #d9d9d9;
+            border-radius: 6px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .avatar-uploader .el-upload:hover {
+            border-color: #409EFF;
+        }
+
+        .avatar-uploader-icon {
+            font-size: 28px;
+            color: #8c939d;
+            width: 150px;
+            height: 70px;
+            line-height: 150px;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 70px;
+            display: block;
+        }
+
+        .el-table td, .el-table th {
+            text-align: center !important;
+        }
+    </style>
+</head>
+<body class="hold-transition">
+<div id="app">
+
+    <div class="content-header">
+        <h1><span style="color: #00acd6">核桃树管理</span><small>成员管理</small></h1>
+        <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb">
+            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item>管理</el-breadcrumb-item>
+            <el-breadcrumb-item>成员管理</el-breadcrumb-item>
+        </el-breadcrumb>
+    </div>
+
+    <div class="app-container">
+        <div class="box">
+            <div class="filter-container">
+                <!--查询表单-->
+                <el-form :inline="true">
+                    <el-form-item label="用户名">
+                        <el-input v-model="searchMap.loginName" placeholder="用户名" class="filter-item"></el-input>
+                    </el-form-item>
+                    <el-form-item label="启用">
+                        <el-input v-model="searchMap.status" placeholder="状态" class="filter-item"></el-input>
+                    </el-form-item>
+
+                    <el-button class="dalfBut" @click="fetchData()">查询</el-button>
+                    <el-button type="primary" class="butT" @click="formVisible=true;pojo={}">新增</el-button>
+                </el-form>
+            </div>
+
+            <el-table :data="tableData" border style="width: 100%">
+                <el-table-column prop="id" label="id" width="100"></el-table-column>
+                <el-table-column prop="loginName" label="用户名" width="280"></el-table-column>
+                <el-table-column prop="password" label="密码"></el-table-column>
+                <el-table-column prop="status" label="启用" width="100">
+                    <template slot-scope="scope">
+                        <el-switch
+                                disabled
+                                v-model="scope.row.status"
+                                active-value="1"
+                                inactive-value="0"
+                        ></el-switch>
+                    </template>
+                </el-table-column>
+
+                <el-table-column
+                        label="操作" width="180">
+                    <template slot-scope="scope">
+                        <el-button @click="edit(scope.row.id)" size="mini" type="primary" size="small">修改</el-button>
+                        <el-button @click="dele(scope.row.id)" size="mini" type="danger" size="small">删除</el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+            <div class="pagination-container">
+                <el-pagination
+                        class="pagiantion"
+                        @size-change="fetchData"
+                        @current-change="fetchData"
+                        :current-page.sync="currentPage"
+                        :page-sizes="[10, 20, 30, 40]"
+                        :page-size="size"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="total">
+                </el-pagination>
+            </div>
+            <div class="add-form">
+                <!--弹出窗口-->
+                <el-dialog title="编辑" :visible.sync="formVisible">
+                    <el-form label-width="80px">
+                        <el-form-item label="用户名">
+                            <el-input v-model="pojo.loginName"></el-input>
+                        </el-form-item>
+                        <el-form-item label="密码">
+                            <el-input v-model="pojo.password" type="password"></el-input>
+                        </el-form-item>
+                        <el-form-item label="所属角色">
+                            <el-select v-model="pojo.roleIds" multiple placeholder="请选择角色" @change="$forceUpdate();">
+                                <el-option
+                                        v-for="item in roles"
+                                        :key="item.id"
+                                        :label="item.name"
+                                        :value="item.id">
+                                </el-option>
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item label="状态">
+                            <el-switch
+                                    v-model="pojo.status"
+                                    active-value="1"
+                                    inactive-value="0"
+                            ></el-switch>
+                        </el-form-item>
+
+                        <el-form-item>
+                            <el-button type="primary" @click="save()">保存</el-button>
+                            <el-button @click="formVisible = false">关闭</el-button>
+                        </el-form-item>
+                    </el-form>
+                </el-dialog>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="/js/vue.js"></script>
+<script src="/js/axios.js"></script>
+<script src="/js/elementui.js"></script>
+<script>
+    new Vue({
+
+        el: '#app',
+        data() {
+            return {
+                tableData: [],
+                currentPage: 1,
+                total: 10,
+                size: 10,
+                searchMap: {},
+                pojo: {},
+                formVisible: false,
+                imageUrl: '',
+                roles: [],
+                adminRoleMap: {}
+            }
+        },
+        created() {
+            this.fetchData();
+        },
+        methods: {
+            fetchData() {
+                axios.post(`/admin/findPage.do?page=${this.currentPage}&size=${this.size}`, this.searchMap).then(response => {
+                    this.tableData = response.data.rows;
+                    this.total = response.data.total;
+                });
+                //获得角色列表
+                axios.get("/role/findAll.do").then(response => {
+                    this.roles = response.data;
+                })
+            },
+            save() {
+                axios.post(`/admin/${this.pojo.id == null ? 'add' : 'update'}.do`, {
+                    "admin": {
+                        id: this.pojo.id,
+                        "loginName": this.pojo.loginName,
+                        "password": this.pojo.password,
+                        "status": this.pojo.status
+                    }, "roleIds": this.pojo.roleIds.toString().split(",")
+                }).then(response => {
+                    this.fetchData(); //刷新列表
+                    this.formVisible = false;//关闭窗口
+                    if (response.data.code == 0) {
+                        this.$message({
+                            type: "success",
+                            message: "保存成功！"
+                        })
+                    } else {
+                        this.$message({
+                            type: "error",
+                            message: "保存失败！"
+                        })
+                    }
+                });
+            },
+            edit(id) {
+                this.formVisible = true // 打开窗口
+                // 调用查询
+                axios.get(`/admin/findById.do?id=${id}`).then(response => {
+                    this.pojo = response.data.admin;
+                    this.pojo.roleIds = response.data.roleIds;
+                })
+            },
+            dele(id) {
+                if (id == 1) {
+                    this.$message({
+                        type: "warning",
+                        message: "不能删除终极管理员"
+                    })
+                } else {
+                    this.$confirm('确定要删除此记录吗?', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        axios.get(`/admin/delete.do?id=${id}`).then(response => {
+                            this.fetchData(); //刷新列表
+                        })
+                    })
+                }
+
+            },
+        }
+    })
+</script>
+</html>

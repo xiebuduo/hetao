@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 页面meta -->
+    <meta charset="utf-8">
+    <title>核桃树后台管理</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="css/theme-chalk.css">
+    <link rel="stylesheet" href="css/login_style.css">
+</head>
+
+<body class="mainBg">
+<div id="app">
+    <form class="loginForm clear" action="/login" method="post">
+        <div class="loginMain">
+            <div class="loginlogo"></div>
+            <div class="loginCon">
+            
+              <span class="el-form-item">
+                <span class="userIcon"></span>
+                <span class="el-input">
+                  <input class="el-input__inner"  v-model="username" value="admin" required placeholder="管理员账号"/>
+                </span>
+              </span>
+                <span class="el-form-item">
+                <span class="pwdIcon"></span>
+                <span class="el-input">
+                  <input class="el-input__inner"  v-model="password" value="123" type="password" required placeholder="密码"/>
+                </span>
+                
+              </span>
+
+            </div>
+
+            <div class="loginBtn">
+                <input type="checkbox" name="remember-me" style="color: white">记住密码</input>
+                <button type="button" class="el-button el-button--primary" @click="login">登录</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+</body>
+<!-- 引入组件库 -->
+<script src="js/vue.js"></script>
+<script src="js/elementui.js"></script>
+<script src="js/axios.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data(){
+            return{
+                username:"",
+                password: ""
+            }
+        },
+        created() {
+            this.fetchData();
+        },
+        methods: {
+            fetchData() {
+                if(window != top){
+                    top.location.href=this.url;
+                }
+                window.onload = windowHeight; //页面载入完毕执行函数
+                function windowHeight() {
+                    let asieHeight = document.getElementById("app")
+                    asieHeight.style.height = document.documentElement.clientHeight + 'px'
+                }
+
+
+            },
+            login(){
+                let params=new URLSearchParams();
+                params.append('username',this.username);
+                params.append('password',this.password);
+                axios.post("/login",params).then(response => {
+                    let data =response.data;
+                    if(data.data != null){
+                            this.$message({
+                                type: "warning",
+                                message: data.data
+                            })
+                    }
+                    else {
+                        this.$message({
+                            type: "success",
+                            message:"登录成功！"
+                        })
+                        window.location.href="/main.html";
+                    }
+                })
+            }
+        }
+    })
+
+
+</script>
+</html>

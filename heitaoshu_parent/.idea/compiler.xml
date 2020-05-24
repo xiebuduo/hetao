@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="heitaoshu_common_cas" />
+        <module name="heitaoshu_service_business" />
+        <module name="heitaoshu_pojo" />
+        <module name="heitaoshu_web_center" />
+        <module name="heitaoshu_interface" />
+        <module name="heitaoshu_service_seckill" />
+        <module name="heitaoshu_web_manager" />
+        <module name="heitaoshu_service_system" />
+        <module name="heitaoshu_service_sms" />
+        <module name="heitaoshu_common" />
+        <module name="heitaoshu_service_user" />
+        <module name="heitaoshu_service_goods" />
+        <module name="heitaoshu_common_web" />
+        <module name="heitaoshu_service_config" />
+        <module name="heitaoshu_service_order" />
+        <module name="heitaoshu_common_service" />
+        <module name="heitaoshu_web_portal" />
+        <module name="heitaoshu_web_seckill" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="heitaoshu_common" target="8" />
+      <module name="heitaoshu_common_cas" target="8" />
+      <module name="heitaoshu_common_service" target="8" />
+      <module name="heitaoshu_common_web" target="8" />
+      <module name="heitaoshu_interface" target="8" />
+      <module name="heitaoshu_parent" target="8" />
+      <module name="heitaoshu_pojo" target="8" />
+      <module name="heitaoshu_service_business" target="8" />
+      <module name="heitaoshu_service_config" target="8" />
+      <module name="heitaoshu_service_goods" target="8" />
+      <module name="heitaoshu_service_order" target="8" />
+      <module name="heitaoshu_service_seckill" target="8" />
+      <module name="heitaoshu_service_sms" target="8" />
+      <module name="heitaoshu_service_system" target="8" />
+      <module name="heitaoshu_service_user" target="8" />
+      <module name="heitaoshu_web_center" target="8" />
+      <module name="heitaoshu_web_manager" target="8" />
+      <module name="heitaoshu_web_portal" target="8" />
+      <module name="heitaoshu_web_seckill" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-encoding utf-8" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="heitaoshu_common" options="" />
+      <module name="heitaoshu_common_cas" options="" />
+      <module name="heitaoshu_common_service" options="" />
+      <module name="heitaoshu_common_web" options="" />
+      <module name="heitaoshu_interface" options="" />
+      <module name="heitaoshu_parent" options="" />
+      <module name="heitaoshu_pojo" options="" />
+      <module name="heitaoshu_service_business" options="" />
+      <module name="heitaoshu_service_config" options="" />
+      <module name="heitaoshu_service_goods" options="" />
+      <module name="heitaoshu_service_order" options="" />
+      <module name="heitaoshu_service_seckill" options="" />
+      <module name="heitaoshu_service_sms" options="" />
+      <module name="heitaoshu_service_system" options="" />
+      <module name="heitaoshu_service_user" options="" />
+      <module name="heitaoshu_web_center" options="" />
+      <module name="heitaoshu_web_manager" options="" />
+      <module name="heitaoshu_web_portal" options="" />
+      <module name="heitaoshu_web_seckill" options="" />
+    </option>
+  </component>
+</project>

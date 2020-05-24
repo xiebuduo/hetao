@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>相册列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../css/elementui.css">
+    <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+      .avatar-uploader .el-upload {
+        border: 1px dashed #d9d9d9;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .avatar-uploader .el-upload:hover {
+        border-color: #409EFF;
+      }
+
+      .avatar-uploader-icon {
+        font-size: 28px;
+        color: #8c939d;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+      }
+
+      .avatar {
+        width: 100px;
+        height: 100px;
+        display: block;
+      }
+
+    </style>
+  </head>
+  <body class="hold-transition">
+  <div id="app">
+    <div class="content-header">
+      <h1><span style="color: #00acd6">核桃树管理</span><small>相册管理</small></h1>
+      <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item>管理</el-breadcrumb-item>
+        <el-breadcrumb-item>相册管理</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
+
+    <div  v-for="imgurl in imageUrls" >
+        <img v-bind:src="imgurl.url">
+    </div>
+  </div>
+  </body>
+  <script src="/js/vue.js"></script>
+  <script src="/js/axios.js"></script>
+  <script src="/js/elementui.js"></script>
+  <script src="/js/util.js"></script>
+  <script>
+    new Vue({
+      el:"#app",
+      data() {
+        return {
+          imageUrls:[]
+        }
+      },
+      created(){
+        this.fetchData();
+      },
+      methods:{
+        fetchData(){
+          let id= getQueryString("id");
+          axios.get("/album/findById.do?id=" + id).then(response=>{
+            this.imageUrls = response.data.imageItems;
+            this.imageUrls = this.imageUrls.split("},");
+            for (let i=0;i < this.imageUrls.length; i++){
+              if(i<this.imageUrls.length - 1){
+                this.imageUrls[i]=(this.imageUrls[i]+"}]");
+                this.imageUrls[i]=this.imageUrls[i].substring(1,this.imageUrls[i].length-1);
+                this.imageUrls[i]=JSON.parse(this.imageUrls[i]);
+              }else{
+                this.imageUrls[i] = "["+this.imageUrls[i];
+                this.imageUrls[i]=this.imageUrls[i].substring(1,this.imageUrls[i].length-1);
+                this.imageUrls[i]=JSON.parse(this.imageUrls[i]);
+              }
+
+            }
+          })
+        }
+      }
+    })
+  </script>
+</html>
+

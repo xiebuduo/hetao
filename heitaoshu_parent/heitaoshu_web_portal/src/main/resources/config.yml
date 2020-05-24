@@ -1,0 +1,15 @@
+server_addr: "easy.echosite.cn:4443"
+# server_addr 不要把你的前缀加在这里，如果你是cross域名的服务器，你只需要把 easy 部分替换为 cross，懂我意思吧。
+# inspect_addr: "127.0.0.1:4040"
+# inspect_addr 这里也基本不需要改，除非你想自定义小助手访问接口
+echosite_id: "18081234114"
+# 这是你的账号，注意，是手机号
+echosite_token: "$2y$10$TNt4nU9Ug/.vgxtFovGITuuM1KrtYUm6LsjWgShaglO.OjBmXv7B."
+
+tunnels:
+  web_a:
+    subdomain: hetao
+    proto:
+      http: 127.0.0.1:80
+
+
